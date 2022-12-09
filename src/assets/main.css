@@ -1,0 +1,118 @@
+@import './base.css';
+
+#app {
+  font-weight: normal;
+}
+
+input{
+  background: none;
+  border: none;
+  -webkit-appearance: none;
+}
+input:focus{
+  outline: none;
+}
+h1{
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 56px;
+  color: var(--main-black-color);
+}
+h3{
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--main-black-color);
+}
+
+h4{
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--main-black-color);
+}
+
+.color-grey{
+  color: var(--main-grey-color);
+}
+.color-green{
+  color: var(--main-green-color);
+}
+
+.flex-align-center{
+  display: flex;
+  align-items: center;
+}
+
+button, input[type="submit"], input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.button{
+  padding: 8px 16px;
+  color: var(--main-purple-color);
+  border: 1px solid var(--main-dark-grey-color);
+  background-color: var(--main-white-color);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
+}
+.button:hover{
+  color: var(--main-white-color);
+  background-color: var(--main-purple-background);
+}
+.button:active{
+  transform: scale(110%);
+  transition: transform 0.01s;
+}
+.button-purple{
+  color: var(--main-white-color);
+  background-color: var(--main-purple-background);
+  border: none;
+}
+.button-purple:hover{
+  color: var(--main-purple-color);
+  background-color: var(--main-white-color);
+}
+.button-big{
+  padding: 12px 20px;
+}
+
+
+.mr-8{
+  margin-right: 8px;
+}
+.mr-16{
+  margin-right: 16px;
+}
+.mr-32{
+  margin-right: 32px;
+}
+.mb-8{
+  margin-bottom: 8px;
+}
+.mb-16{
+  margin-bottom: 16px;
+}
+.mb-32{
+  margin-bottom: 32px;
+}
+
+.filter-purple{
+  filter: brightness(0) saturate(100%) invert(51%) sepia(91%) saturate(6457%) hue-rotate(245deg) brightness(97%) contrast(103%);
+}
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+}
