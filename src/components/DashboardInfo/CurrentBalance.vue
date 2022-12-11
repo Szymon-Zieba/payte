@@ -4,7 +4,7 @@
 
 <template>
   <div class="current-balance big-block-grey">
-    <div class="dashboard-block-title">
+    <div class="dashboard-block-title mb-40">
       <h3>Current Balance</h3>
       <p><img class="dashboard-block-title-icon " alt="dots-horizontal" src="/dots-horizontal.svg"></p>
     </div>

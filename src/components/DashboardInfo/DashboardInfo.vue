@@ -29,7 +29,6 @@ import SummaryGraph from "@/components/DashboardInfo/SummaryGraph.vue";
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
 }
 .dashboard-block-title-icon{
   cursor: pointer;
@@ -44,7 +43,7 @@ import SummaryGraph from "@/components/DashboardInfo/SummaryGraph.vue";
   transition: transform 0.1s;
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 1080px) {
   .current-balance{
     margin-right: 0;
   }

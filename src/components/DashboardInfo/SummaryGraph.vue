@@ -1,5 +1,5 @@
 <script setup>
-
+import BarChart from './GraphChart.vue'
 </script>
 
 <template>
@@ -8,13 +8,12 @@
       <h3>Summary</h3>
       <p class="dashboard-block-title-icon"><img alt="dots-horizontal " src="/dots-horizontal.svg"></p>
     </div>
+    <BarChart></BarChart>
   </div>
 </template>
 
 <style>
-.summary-graph{
-}
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 1081px) {
   .summary-graph{
     display: none;
   }
@@ -23,7 +22,7 @@
   display: none;
   margin-top: 32px;
 }
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 1080px) {
   .summary-graph-small{
     display: block;
   }

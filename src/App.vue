@@ -1,10 +1,10 @@
 <script setup>
-import Dashboard from './views/DashboardView.vue'
+import DashboardView from './views/DashboardView.vue'
 </script>
 
 <template>
   <main>
-    <Dashboard></Dashboard>
+    <DashboardView></DashboardView>
   </main>
 </template>
 

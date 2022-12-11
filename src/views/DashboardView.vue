@@ -3,11 +3,21 @@
   import DashboardInfo from "@/components/DashboardInfo/DashboardInfo.vue";
   import SummaryList from "@/components/DashboardCrypto/SummaryList.vue";
   import CryptoList from "@/components/DashboardCrypto/CryptoList.vue";
-  import {getData} from "@/api/getData.js"
-  import {ref} from "vue";
+  import {onMounted, reactive, ref} from "vue";
   import SummaryGraph from "@/components/DashboardInfo/SummaryGraph.vue";
+  import axios from "axios";
+  const apiLink = "http://localhost:3000/"
 
-  //const cos = ref(await getData())
+  let data = ref(null)
+  const getData = async () => {
+    await axios(apiLink)
+        .then(function (response) {
+          data.value = response.data
+        })
+  }
+  onMounted(() => getData())
+
+  let chooseTable = ref("Summary")
 </script>
 
 <template>
@@ -15,13 +25,14 @@
     <SearchMenu class="mb-32"></SearchMenu>
     <DashboardInfo class="mb-32"></DashboardInfo>
     <div class="crypto">
-      <SummaryList class="mb-32"></SummaryList>
-      <CryptoList class="mb-8" v-for="n in 10" key="n"></CryptoList>
-      <div class="blur">
-        dsadsa
+      <SummaryList v-model="chooseTable" class="mb-32"></SummaryList>
+      <CryptoList v-if="chooseTable === 'Summary'" class="mb-8" v-for="product in data" :product="product" key="product.id"></CryptoList>
+      <div class="cos">
+        <div class="blur">
+        </div>
       </div>
     </div>
-    <SummaryGraph class="summary-graph-small"></SummaryGraph>
+    <SummaryGraph class="summary-graph-small mb-40"></SummaryGraph>
   </div>
 </template>
 
@@ -35,9 +46,17 @@
   border-radius: 16px;;
   position: relative;
 }
+.cos{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}
 .blur{
-  position: sticky;
-  height: 136px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 150px;
   width: 100%;
   background: linear-gradient(180deg, rgba(247, 247, 249, 0) 0%, #F7F7F9 100%);
 }

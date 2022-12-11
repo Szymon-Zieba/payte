@@ -1,14 +1,24 @@
 <script setup>
+const props = defineProps({
+  modelValue: String
+})
 
+const list = ["Summary", "Table", "Charts", "Reporting", "Analysis"]
+
+const emit = defineEmits(['update:chooseTable'])
+
+const changeComponent = (name) => {
+  emit("update:modelValue", name)
+}
 </script>
 
 <template>
   <div class="list">
-    <p class="list-text">Summary</p>
-    <p class="list-text">Table</p>
-    <p class="list-text">Charts</p>
-    <p class="list-text">Reporting</p>
-    <p class="list-text">Analysis</p>
+    <span></span>
+    <p v-for="item in list" key="item" @click="changeComponent(item)"  :class="modelValue === item ? 'list-text list-text-current' : 'list-text'">
+      {{ item }}
+    </p>
+    <span> </span>
   </div>
 </template>
 
@@ -16,6 +26,7 @@
 .list{
   display: flex;
   border-bottom: 1px solid var(--main-dark-grey-color);
+  overflow: auto;
 }
 .list-text{
   font-size: 16px;
